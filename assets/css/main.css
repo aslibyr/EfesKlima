@@ -4371,7 +4371,7 @@ body.is-preload #banner p {
     flex-direction: column;
     gap: 15px;
     z-index: 9999;
-    
+
     /* GİZLEME VE ANİMASYON AYARLARI */
     opacity: 0;
     visibility: hidden;
@@ -4421,7 +4421,8 @@ body.is-preload #banner p {
 }
 
 .call-fab:hover {
-	background-color: #324072;
+	background-color: #6a7bbd !important; /* Daha açık ve belirgin bir mavi/mor tonu */
+        transform: scale(1.1);
 }
 
 /* Mobilde butonlar biraz daha büyük ve rahat olsun */
@@ -4505,10 +4506,10 @@ body.is-preload #banner p {
     /* Görselin üst kısmına odaklanarak altını kırpıyoruz (20% değeriyle oynayabilirsin) */
     background-position: center 20% !important;
     background-attachment: scroll !important; /* Mobilde kayma yapmaması için */
-    
+
     /* Poligon geçişi ve sızıntı önleme */
     margin-top: -6.5em !important;
-    padding-top: 8em !important; 
+    padding-top: 8em !important;
     border-top: 0 !important;
 }
 
@@ -4516,4 +4517,40 @@ body.is-preload #banner p {
 #footer .inner {
     position: relative;
     z-index: 2;
+}
+
+/* Kartların tamamını tıklanabilir yapma ve resmi koruma */
+.features article {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease !important;
+}
+
+.features article:hover {
+    transform: scale(1.03) translateY(-5px); /* Hem biraz büyür hem yukarı kalkar */
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important; /* Elevation/Gölge etkisi */
+    z-index: 5; /* Diğer kartların üstünde görünmesi için */
+}
+
+.card-link {
+    border-bottom: none !important;
+}
+
+.card-link .image {
+    display: block;
+    margin: -1.75em -1.75em 1.75em -1.75em; /* Resmi kartın kenarlarına sıfırladık */
+    width: calc(100% + 3.5em);
+    border-radius: 5px 5px 0 0;
+}
+
+.card-link .image img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+.card-link h3, .card-link p {
+    color: #ffffff !important;
+}
+
+.card-link:hover {
+    background-color: rgba(255, 255, 255, 0.03);
 }
