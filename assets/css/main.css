@@ -1369,3 +1369,47 @@ ul.contact li:first-child { margin-top: 0; }
         display: flex !important; /* Sadece mobilde görünür */
     }
 }
+/* Menü Kapatma (✕) Butonu Kesin Çözüm */
+#menu .close {
+    position: absolute !important;
+    top: 15px !important;
+    right: 15px !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: none !important;
+    border: none !important;
+    border-bottom: none !important;
+    cursor: pointer !important;
+    text-indent: -9999px !important; /* "Kapat" yazısını yok eder */
+    overflow: hidden !important;
+    z-index: 10005 !important;
+    display: block !important;
+}
+
+/* Çarpının 1. Çizgisi */
+#menu .close:before,
+#menu .close:after {
+    content: '' !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 24px !important;
+    height: 3px !important;
+    background-color: #ffffff !important;
+    border-radius: 2px !important;
+    display: block !important;
+}
+
+#menu .close:before {
+    transform: translate(-50%, -50%) rotate(45deg) !important;
+}
+
+/* Çarpının 2. Çizgisi */
+#menu .close:after {
+    transform: translate(-50%, -50%) rotate(-45deg) !important;
+}
+
+#menu .close:hover:before,
+#menu .close:hover:after {
+    background-color: #cbd5e0 !important;
+}
